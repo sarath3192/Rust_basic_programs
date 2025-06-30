@@ -9,8 +9,9 @@
 
 //HOW MEMORY ALLOCATED ON THE STACK AND HEAD ARE DIFFERENT
 /*fn main() {
-    let x = 5; // The meory is created on the heap
+    let x = 5; // The memory is created on the stack
     let y = x; // The x is coppied to y where y will have different memory as we know the size of the x and y compile time.
+               // In case of stack doing a deep copy is easy and feasible as we know the size at compile time.
 }
 */
 
