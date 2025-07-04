@@ -41,3 +41,39 @@
     Summary:
         Copy = fast, stack-only, simple types ✅
         Clone = can be expensive, especially with heap data ❌
+
+
+| Trait   | Use case                 | Cost                            |
+| ------- | ------------------------ | ------------------------------- |
+| `Copy`  | Simple stack-only types  | Very cheap                      |
+| `Clone` | Any type (stack or heap) | Might be costly (even on stack) |
+
+
+    #[derive(Debug)]
+    struct Point{
+        x: i32,
+        y: i32,
+    }
+    fn main(){
+        let a = Point{x: 20, y: 10};
+        let b = a;                  // here copy is used which is cheap (that is happening on the stack). uses `Copy`, fast
+        let c = a.clone();          // Works, but unnecessary — same result as above
+    }
+
+    Copy Trait:
+        Marker trait (no method to implement manually).
+        Tells the compiler it’s safe to do a bitwise copy.
+        Automatically used when you assign or pass values.
+    
+    Clone Trait
+        Has an actual method: .clone()
+        You write impl Clone or use #[derive(Clone)]
+        Can do custom (even expensive) copying
+
+# Ownership rules and Stack & Heap memory
+
+    1. The owner ship rules has to be handled at compile time and also at runtime.
+    2. When we say compile time the memory allocation is in the stack.
+    3. The memory which is allocated at runtime is heap memory.
+
+    So we need to check the rules of ownership and borrow at both compile time and runtime. As the same problems exits in both compilation and running application.

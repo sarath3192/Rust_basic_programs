@@ -1,14 +1,28 @@
 use std::any::type_name;
 
-fn print_type_of<T>(_: T) {
-    println!("{}", type_name::<T>());
-}
+// fn print_type_of<T>(_: T) {
+//     println!("{}", type_name::<T>());
+// }
 
 fn main(){
-    let a: Box<i32> = Box::new(10);
-    print_type_of(a.clone());                // The scope of the taking owner ship is limited to the function only.
-    let b: Box<i32> = a.clone();
-    println!("{}{}", a,b);   
+    // let a: Box<i32> = Box::new(10);
+    // // print_type_of(a.clone());                // The scope of the taking owner ship is limited to the function only.
+    // let b: Box<i32> = a.clone();
+    // println!("{}{}", a,b);  
+    // let c: Box<i32> = Rc::new(Box::new(20));
+    // let d: B0x<i32> = c.clone(c);
+    // println("{}{}", c,d);
+
+    let mut a: Box<i32> = Box::new(10);
+    let mut c: Box<i32> =  Box::new(20);
+    println!("{}",a);
+    // let b = &mut a;
+    // // b.push(20));
+    // // b = &mut c;
+    // println!("{}",b);
+    // // let c = &mut a;
+    // // print_type_of(b);
+    // // println!("{}{}",b, c);
 }
 
 /* Definition = Declaration + Allocation (or Implementation)
