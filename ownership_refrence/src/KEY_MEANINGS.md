@@ -72,8 +72,18 @@
 
 # Ownership rules and Stack & Heap memory
 
-    1. The owner ship rules has to be handled at compile time and also at runtime.
+    1. The Ownership rules has to be handled at compile time and also at runtime.
     2. When we say compile time the memory allocation is in the stack.
     3. The memory which is allocated at runtime is heap memory.
 
     So we need to check the rules of ownership and borrow at both compile time and runtime. As the same problems exits in both compilation and running application.
+
+    1. Modification of a variable by multiple parties at the same time is a key challange.
+    2. Some data present in heap, but actual pointer is stored in the stack memory.
+    3. For Example if you make sure that at compile time all Ownership rules are checked, it is not enough. We need to check at run time also.
+
+# Note:
+
+    1. In other languages creating and assigning multiple values and variables is very much easy and simple. But that will reates a lot of problem them projects become bigger and bigger to handle memory effectively.
+
+    2. So to over come such issues rust introduced ownership rules. We can do the same things in rust also but we need to know the rules very well in details. Then it is very much easy to work with rust like any other language.

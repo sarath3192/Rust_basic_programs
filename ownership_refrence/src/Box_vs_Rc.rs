@@ -13,9 +13,14 @@ fn main(){
     // let d: B0x<i32> = c.clone(c);
     // println("{}{}", c,d);
 
-    let mut a: Box<i32> = Box::new(10);
-    let mut c: Box<i32> =  Box::new(20);
-    println!("{}",a);
+    // let mut a: Box<i32> = Box::new(10);
+    // let mut b: Box<i32> =  Box::new(20);
+    // b = a;
+
+    let a: Rc<i32> =  Rc::new(10);
+    let a = a
+
+    // println!("{}",a);
     // let b = &mut a;
     // // b.push(20));
     // // b = &mut c;
