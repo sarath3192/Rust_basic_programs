@@ -7,7 +7,7 @@ fn main(){
     let a = Arc::new(Mutex::new(0));
     let mut handles = vec![];
 
-    // for _ in 0..5{
+    for _ in 0..5{
         // println!("data: {}", *data.lock().unwrap());
         let handle = thread::spawn(move||{
                 let data = Arc::clone(&a);
@@ -18,7 +18,7 @@ fn main(){
         });
         thread::sleep(time::Duration::from_secs(1));
         handles.push(handle);
-    // }
+    }
 
     for hand in handles{
         hand.join().unwrap();
